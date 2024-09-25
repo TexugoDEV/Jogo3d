@@ -9,16 +9,20 @@ public class AgentIA : MonoBehaviour
     public List<Transform> wayPoint;
     NavMeshAgent navMeshAgent;
     public int currentWaypointIndex = 0;
+    private Animator anim;
 
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
         Walking();
+       
+
     }
     private void Walking()
     {
@@ -35,5 +39,6 @@ public class AgentIA : MonoBehaviour
         }
 
         navMeshAgent.SetDestination(wayPoint[currentWaypointIndex].position);
+
     }
 }
